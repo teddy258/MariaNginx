@@ -17,14 +17,18 @@ cd docker
 ```
 # Config files
 ```
-# docker-compose.yml
+# vim docker-compose.yml
+
 MYSQL_DATABASE=<Your Database name>  #default : adonis
 MYSQL_ROOT_PASSWORD=<Your Password>  #default : 1234
 
-# nginx/default.conf
+# vim nginx/default.conf
+
 server_name <Your hostname>
 proxy_pass http://127.0.0.1:<Your port>;
+
 # Reload Nginx config
+
 docker container exec <ContainerID> nginx -s reload
 ```
 # Start Dcoker
