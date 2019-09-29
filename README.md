@@ -65,10 +65,10 @@ firewall-cmd --permanent --zone=public --add-port=80/tcp
 firewall-cmd --permanent --zone=public --remove-port=80/tcp
 
 #Allow Service
-firewall-cmd --permanent --zone=public --add-service=http,https,ssl
+firewall-cmd --permanent --zone=public --add-service=http,https
 
 #Disallow Service
-firewall-cmd --permanent --zone=public --remove-service=http
+firewall-cmd --permanent --zone=public --remove-service=http,https
 
 #Reload firewall
 firewall-cmd --reload
