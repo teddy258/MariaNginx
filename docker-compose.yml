@@ -6,11 +6,11 @@ services:
     restart: always
     environment:
       - MYSQL_ROOT_PASSWORD=1234
-      - MYSQL_DATABASE=adonis2
+      - MYSQL_DATABASE=adonis
       - MYSQL_ALLOW_EMPTY_PASSWORD=no
     volumes:
-      - ./mariadb/data:/var/lib/mysql:z
-      - ./mariadb/cnf.d:/etc/my.cnf.d:z
+      - ./data:/var/lib/mysql:z
+      - ./mariadb:/etc/my.cnf.d:z
     ports:
       - '10000:3306'
   nginx:
@@ -20,5 +20,5 @@ services:
       - '443:443'
       - '80:80'
    volumes:
-      - ./nginx.conf.d:/etc/nginx/conf.d
+      - ./nginx:/etc/nginx/conf.d:z
 
