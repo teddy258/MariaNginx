@@ -14,6 +14,8 @@ https://cafe.naver.com/soyeoncode
 
  git clone https://github.com/teddy258/MariaNginx.git docker
  cd docker
+
+ Allow port : 3000, 3333
 ```
 # Config files
 ```
