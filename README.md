@@ -40,10 +40,12 @@ docker exec -it <ContainerID> bash
 # Config files
 ```
 
-# DataBase & Root PASSWORD &
+## DataBase & Root PASSWORD &
+
 # docker-compose.yml
 MYSQL_DATABASE=<Your Database name>  #default : adonis
 MYSQL_ROOT_PASSWORD=<Your Password>  #default : 1234
+
 # Files
 Nginx conf : /nginx 
 MariaDB cnf : /mariadb
