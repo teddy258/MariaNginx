@@ -17,13 +17,11 @@ https://cafe.naver.com/soyeoncode
 ```
 # Config files
 ```
- vim docker-compose.yml
-
+# vim docker-compose.yml
 MYSQL_DATABASE=<Your Database name>  #default : adonis
 MYSQL_ROOT_PASSWORD=<Your Password>  #default : 1234
 
- vim nginx/default.conf
- 
+# nginx/default.conf
 server_name <Your hostname>
 proxy_pass http://127.0.0.1:<Your port>;
 
