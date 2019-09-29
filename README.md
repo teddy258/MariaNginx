@@ -14,7 +14,21 @@ systemctl start docker.service
 
 git clone https://github.com/teddy258/MariaNginx.git docker
 cd docker
+```
+# Config files
+```
+# docker-compose.yml
+MYSQL_DATABASE=<Your Database name>  #default : adonis
+MYSQL_ROOT_PASSWORD=<Your Password>  #default : 1234
 
+# nginx/default.conf
+server_name <Your hostname>
+proxy_pass http://127.0.0.1:<Your port>;
+# Reload Nginx config
+docker container exec <ContainerID> nginx -s reload
+```
+# Start Dcoker
+```
 # Create container
 docker-compose up -d
 
@@ -24,11 +38,14 @@ docker-compose up -d --force-recreate
 # Down all container
 docker-compose down
 ```
-# Change nginx host name & proxy pass port
+# Directory
 ```
-# nginx/default.conf
-server_name <Your hostname>
-proxy_pass http://127.0.0.1:<Your port>;
+# Files
+Nginx conf : /nginx 
+MariaDB cnf : /mariadb
+
+# Data Directory
+MariaDB data : /data
 ```
 # Access inside Docker-Container 
 ```
@@ -37,24 +54,6 @@ docker ps
 # Get in to container
 docker exec -it <ContainerID> bash
 ```
-# Config files
-```
 
-## DataBase & Root PASSWORD &
-
-# docker-compose.yml
-MYSQL_DATABASE=<Your Database name>  #default : adonis
-MYSQL_ROOT_PASSWORD=<Your Password>  #default : 1234
-
-# Files
-Nginx conf : /nginx 
-MariaDB cnf : /mariadb
-
-# Data Directory
-MariaDB data : /data
-
-# Reload Nginx config
-docker container exec <ContainerID> nginx -s reload
-```
 
 
