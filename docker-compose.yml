@@ -12,7 +12,7 @@ services:
       - ./data:/var/lib/mysql:z
       - ./mariadb:/etc/my.cnf.d:z
     ports:
-      - '10000:3306'
+      - '3306:3306'
   nginx:
    image: nginx:1.13
    container_name: nginx_1
