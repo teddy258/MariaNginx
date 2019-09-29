@@ -56,5 +56,22 @@ MariaDB data : /data
  docker exec -it <ContainerID> bash
 ```
 
+# CentOS Firewall
+```
+#Allow port
+firewall-cmd --permanent --zone=public --add-port=80/tcp
+
+#Disallow port
+firewall-cmd --permanent --zone=public --remove-port=80/tcp
+
+#Allow Service
+firewall-cmd --permanent --zone=public --add-service=http,https,ssl
+
+#Disallow Service
+firewall-cmd --permanent --zone=public --remove-service=http
+
+#Reload firewall
+firewall-cmd --reload
+```
 
 
